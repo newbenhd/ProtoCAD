@@ -2,6 +2,12 @@
 
 ProtoCAD is a prototyping tool that empowers developers to build and visualize their component as GraphQL schemas and queries. 
 
+## Installation:
+Use the package manager [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/lang/en/) to install
+
+```bash
+yarn install
+```
 
 ## Getting Started:
 - Run Electron and Webpack in Development Mode 

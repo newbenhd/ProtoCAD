@@ -72,7 +72,17 @@ const updateComponent = (components: any[], payload: ComponentInt) => components
 // recursively delete components and child components with same name as payload
 const deleteComponent = (components: any[], payload: ComponentInt) => {
   const newComponents = components.map((item) => {
-    if (item.name === payload.name) return false;
+    if (item.component) {
+      if (item.component.name === payload.name) return false;
+      return {
+        ...item,
+        component: {
+          ...item.component,
+          children: deleteComponent(item.component.children, payload)
+        }
+      }
+    }
+    else if (item.name === payload.name) return false;
     return {
       ...item,
       children: deleteComponent(item.children, payload),
